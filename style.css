@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap');
+/* weights:  300, 600  ––  font-family:Inter;    */
+* {
+    box-sizing: border-box;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+body {
+    font-family:Inter;
+    padding-bottom: 6rem;
+}
+
+
+/* Colors */
+:root {
+    /* main */
+    --main-color: #D3FCD5;
+    --main-stroke: #5B7553;
+    --main-title: #374832;
+
+    /* sections */
+    --red-back: rgb(255, 0, 0, 0.05);
+    --red-stroke: rgb(255, 0, 0, 0.5);
+
+    --green-back: rgb(0, 159, 0, 0.05);
+    --green-stroke: rgb(0, 159, 0, 0.5);
+
+    --blue-back: rgb(0, 0, 255, 0.03);
+    --blue-stroke:  rgb(0, 0, 255, 0.5);
+}
+
+/* Content */
+
+/* Top Menu */
+.topMenu {
+    background-color: var(--main-color);
+    padding: 2rem 0;
+    border-bottom: 5px solid var(--main-stroke)
+}
+
+.mainHeading {
+    font-weight: 600;
+    font-size: 25px;
+    margin-left: 1rem;
+    color: var(--main-title);
+}
+
+/* Color Select */
+.colorSelectContainer {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+        /* specific color Container */
+
+
+        .colorSelect > p { /* color name */
+            font-size: 23px;
+            margin-left: 1.5rem ;
+            margin-bottom: 7px;
+        }
+
+        .colorCard { /* input & values */
+            border-top: 3px solid;
+            border-bottom: 3px solid;
+
+            padding: 2rem 2.5rem;
+                display: grid;
+                gap: 1.4rem;
+        }
+                .redCard {
+                    border-color: var(--red-stroke);
+                    background-color: var(--red-back);
+                }
+                .greenCard {
+                    border-color: var(--green-stroke);
+                    background-color: var(--green-back);
+                }
+                .blueCard {
+                    border-color: var(--blue-stroke);
+                    background-color: var(--blue-back);
+                }
+
+            .colorCard > input  {
+                -webkit-appearance: none;
+                margin-right: 15px;
+                height: 7px;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.6);
+                border-radius: 5px;
+                background-image: linear-gradient(black,black);
+                background-size: 100% 100%;
+              }
+            .colorCard > input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 18px;
+                width: 18px;
+                border-radius: 50%;
+                background: #FFFFFF;
+                outline: 1px solid rgb(60,60,60);
+                cursor: ew-resize;
+                box-shadow: 0 0 2px 0 #555;
+            }
+
+
+            .colorCard > div {  /* value output */
+                display: flex;
+                justify-content: space-between;
+                
+            }
+
+            .colorCard > div > div {
+                font-size: 20px;
+                font-weight: 300;
+                width: 50px;
+            }
+            
+            .colorCard > div > div:nth-child(1) {
+                text-align: left;
+            }
+            .colorCard > div > div:nth-child(2) {
+                text-align: center;
+            }
+            .colorCard > div > div:nth-child(3) {
+                text-align: right;
+            }
+
+.colorOutputSection {
+    display: block;
+    margin-bottom: 2.5rem;
+}
+    .colorOutputValues { /* group of all Outputs */
+        display: grid;
+        padding: 0 1rem;
+    }
+
+        .colorOutput { /* output - item */
+            padding: 12px;
+        }
+
+        .colorOutput img { /* output - copy to clipboard ICON */
+            width: 22px;
+            position: relative;
+            top: 3px;
+        }
+
+        .colorOutput span { /* output - text */
+            font-size: 20px;
+        }
+
+        .colorDesktop {
+            display: none;
+        }
+
+    .colorMobile {
+        height: 85px;
+        width: 100%;
+        background-color: #661A8C;
+        position: sticky;
+        bottom: 0px;
+    }
+
+/* For Desktop */
+@media only screen and (min-width: 376px) {
+
+    .topMenu {
+        background-color: var(--main-color);
+        padding: 2rem 0;
+        border-bottom: 5px solid var(--main-stroke)
+    }
+    
+    .mainHeading {
+        font-size: 33px;
+        margin: 0 auto;
+        display: block;
+        width: 85%;                                 /*IMPORTANT*/
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .colorSelectContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 85%;
+        max-width: 1200px;
+        margin: 2rem auto;
+        gap: 1rem;    
+    }
+    
+        .colorSelect {  /* individual color Container */
+            width: 100%;
+        }
+    
+    
+            .colorCard { /* input & values */
+                border: 3px solid;
+                border-radius: 15px;
+            }
+                    .redCard {
+                        border-color: var(--red-stroke);
+                        background-color: var(--red-back);
+                    }
+                    .greenCard {
+                        border-color: var(--green-stroke);
+                        background-color: var(--green-back);
+                    }
+                    .blueCard {
+                        border-color: var(--blue-stroke);
+                        background-color: var(--blue-back);
+                    }
+    
+    .colorOutputSection {
+        display: grid;
+        grid-template-columns: 13fr 16fr;
+        width: 85%;                                 /*IMPORTANT*/
+        margin: 0 auto;
+        max-width: 1200px;
+
+        border: 3px solid black;
+        border-radius: 25px;
+
+
+    }
+        .colorOutputValues { /* group of all Outputs */
+            grid-column-start: 1;
+            grid-column-end: 2;
+            padding: 2rem;
+        }
+    
+            .colorDesktop {
+                display: inline-block;
+                border-radius: 22px;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                background-color: #661A8C;
+            }
+    
+        .colorMobile {
+            display: none;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .colorOutputSection {
+                grid-template-columns: 1fr;
+                grid-template-rows: 7fr 8fr;
+            }
+
+            .colorOutputValues { /* group of all Outputs */
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                padding: 2rem;
+            }
+        
+                .colorDesktop {
+                    display: inline-block;
+                    border-radius: 22px;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                }
+
+                .colorSelectContainer {
+                    display: grid;
+                }
+
+                .colorSelect {  /* individual color Container */
+                    width: 85vw;
+                }
+
+
+        }
+
+    
+
+
+    
+}

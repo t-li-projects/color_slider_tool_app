@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Slider Tool App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topMenu">
+        <h1 class="mainHeading">Color Slider Tool</h1>
+    </div>
+
+    <!-- Color In - Slider Selectors -->
+    <div class="colorSelectContainer">
+        <!-- Red -->
+        <div class="colorSelect">
+            <p>Red:</p>
+            <div class="colorCard redCard">
+                <input type="range" min="0" max="255" value="102" id="inputRed">
+                <div> <!-- color output -->
+                    <div id="redRGB"> 102</div>
+                    <div id="redHEX">66</div>
+                    <div id="redRGBp">40%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Green: -->
+        <div class="colorSelect">
+            <p>Green:</p>
+            <div class="colorCard greenCard">
+                
+                <input type="range" min="0" max="255" value="26" id="inputGreen">
+                <div> <!-- color output -->
+                    <div id="greenRGB">26</div>
+                    <div id="greenHEX">1A</div>
+                    <div id="greenRGBp">10%</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Blue -->
+        <div class="colorSelect">
+            <p>Blue:</p>
+            <div class="colorCard blueCard">
+                
+                <input type="range" min="0" max="255" value="141" id="inputBlue">
+                <div> <!-- color output -->
+                    <div id="blueRGB">141</div>
+                    <div id="blueHEX">8C</div>
+                    <div id="blueRGBp">55%</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+    <!-- Color Out -->
+<div class="colorOutputSection">
+    <!-- values -->
+    <div class="colorOutputValues">
+        <div class="colorOutput ">
+            <img src="images/copyIcon.png" alt="Copy to clipboard icon" draggable="false">
+            <span id="outputRGB" class="pointer">rgb(102, 26, 141)</span>
+        </div>
+        <div class="colorOutput " >
+            <img src="images/copyIcon.png" alt="Copy to clipboard icon" draggable="false">
+            <span id="outputRGBp" class="pointer">rgb(40%, 10%, 55%)</span>
+        </div>
+        <div class="colorOutput ">
+            <img src="images/copyIcon.png" alt="Copy to clipboard icon" draggable="false">
+            <span id="outputHEX" class="pointer">#661A8C</span>
+        </div>
+    </div>
+
+    <!-- color Desktop -->
+    <div class="colorDesktop" id="colorDesktop"></div>
+</div>
+    <!-- color Mobile -->
+    <div class="colorMobile" id="colorMobile"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
